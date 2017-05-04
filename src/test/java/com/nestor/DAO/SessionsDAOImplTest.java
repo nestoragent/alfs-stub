@@ -27,7 +27,6 @@ public class SessionsDAOImplTest {
 
 
     @Before
-    @Test
     public void addSession() throws Exception {
         Factory.getInstance().getSessionsDAO().addSession(session);
         Assert.assertNotEquals(0, session.getId());

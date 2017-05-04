@@ -5,8 +5,6 @@ import org.junit.Test;
 
 import javax.ws.rs.core.Response;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by sbt-velichko-aa on 18.04.2017.
  */
@@ -17,6 +15,8 @@ public class AddServiceTest {
         Response output = service.addGet("10.116.179.181", "56f9c7ca-ea87-4e80-a06e-28609b13feff",
                 "auto-slave-testplugin-8097", 140929431L, 149249474L);
         Assert.assertEquals(200, output.getStatus());
+        output = service.deleteRow("auto-slave-testplugin-8097");
+        Assert.assertEquals(200, output.getStatus());
     }
 
     @Test
@@ -24,6 +24,8 @@ public class AddServiceTest {
         AddService service = new AddService();
         Response output = service.addGet("10.116.179.181", "56f9c7ca-ea87-4e80-a06e-28609b13feff",
                 "auto-slave-testplugin-8097", 149242431L, 149242474L);
+        Assert.assertEquals(200, output.getStatus());
+        output = service.deleteRow("auto-slave-testplugin-8097");
         Assert.assertEquals(200, output.getStatus());
     }
 

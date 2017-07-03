@@ -11,7 +11,7 @@
         </layout>
     </appender>
 
-    <logger name="com.nestor.rest" level="debug"
+    <logger name="ru.alfa.stubs" level="debug"
             additivity="false">
         <appender-ref ref="STDOUT" />
     </logger>
